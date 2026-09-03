@@ -1,507 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-  >
-
-  <meta
-    name="description"
-    content="Divine Krishna Janmashtami Live Darshan"
-  >
-
-  <title>Shri Krishna Janmashtami • Live Darshan</title>
-
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  >
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Krishna Janmashtami Live Darshan</title>
+    
+    <!-- Google Fonts for Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body id="public-body" class="theme-royal-krishna">
 
-<body>
+    <!-- Background Canvas for Flower Rain & Animations -->
+    <canvas id="effects-canvas"></canvas>
 
-  <!-- =========================================
-       LOADING SCREEN
-  ========================================== -->
-  <div id="loadingScreen" class="loading-screen">
-    <div class="loading-lotus">🪷</div>
-    <div class="loading-text">श्री कृष्ण</div>
-    <div class="loading-subtitle">Divine Darshan</div>
-  </div>
+    <!-- Main Content Wrapper -->
+    <div class="content-wrapper">
+        
+        <!-- Subtle Header Credit -->
+        <header class="credit-header">
+            <i class="fa-solid fa-feather"></i>
+            <span>web design by shlok chaudhary</span>
+            <i class="fa-solid fa-feather"></i>
+        </header>
 
+        <main class="main-container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h2 class="sub-heading">Jai Shri Krishna</h2>
+                <h1 class="main-heading">Divine Live Darshan</h1>
+                <p class="devotional-text">"Experience the divine presence of Lord Krishna from the comfort of your home."</p>
+            </section>
 
-  <!-- =========================================
-       3D BACKGROUND
-  ========================================== -->
-  <div class="background-scene">
+            <!-- Dynamic Announcement Banner -->
+            <div id="announcement-banner" class="glass-panel hidden">
+                <p id="announcement-text"></p>
+            </div>
 
-    <div class="bg-glow glow-one"></div>
-    <div class="bg-glow glow-two"></div>
-    <div class="bg-glow glow-three"></div>
+            <!-- Live TV Box Area -->
+            <section class="tv-section">
+                
+                <!-- Live Status Badge -->
+                <div class="badge-container">
+                    <div id="live-status-badge" class="status-badge scheduled-state">
+                        <span id="status-indicator" class="indicator-dot"></span>
+                        <span id="status-text">Live Darshan Starting Soon</span>
+                    </div>
+                </div>
 
-    <div class="stars"></div>
+                <!-- TV Box Player -->
+                <div class="tv-box glowing-border">
+                    <!-- Default Video ID set to Qt8zL525RZQ -->
+                    <iframe id="youtube-player" 
+                            src="https://www.youtube.com/embed/Qt8zL525RZQ?autoplay=1&mute=1&rel=0&modestbranding=1" 
+                            title="Krishna Janmashtami Live Darshan" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
 
-    <!-- Floating particles -->
-    <div class="particles" id="particles"></div>
+            <!-- Dynamic Countdown Timer -->
+            <section id="countdown-section" class="countdown-section hidden">
+                <h3 class="countdown-title">Darshan begins in</h3>
+                <div class="countdown-grid">
+                    <div class="time-box glass-panel">
+                        <span id="cd-days" class="time-number">00</span>
+                        <span class="time-label">Days</span>
+                    </div>
+                    <div class="time-box glass-panel">
+                        <span id="cd-hours" class="time-number">00</span>
+                        <span class="time-label">Hours</span>
+                    </div>
+                    <div class="time-box glass-panel">
+                        <span id="cd-minutes" class="time-number">00</span>
+                        <span class="time-label">Mins</span>
+                    </div>
+                    <div class="time-box glass-panel">
+                        <span id="cd-seconds" class="time-number">00</span>
+                        <span class="time-label">Secs</span>
+                    </div>
+                </div>
+            </section>
 
-    <!-- Decorative peacock feathers -->
-    <div class="peacock-feather feather-one">🪶</div>
-    <div class="peacock-feather feather-two">🪶</div>
+            <!-- Contact Buttons -->
+            <section class="contact-section">
+                <a href="https://wa.me/917689874945" target="_blank" rel="noopener noreferrer" class="contact-btn whatsapp-btn glass-panel">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Contact via WhatsApp</span>
+                </a>
+                <a href="mailto:jojoenterprises001@gmail.com" class="contact-btn email-btn glass-panel">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>Email Us</span>
+                </a>
+            </section>
 
-  </div>
-
-
-  <!-- =========================================
-       FLOWER RAIN
-  ========================================== -->
-  <div id="flowerRain" class="flower-rain"></div>
-
-
-  <!-- =========================================
-       DIWAS
-  ========================================== -->
-  <div class="diya diya-left">
-    <div class="diya-flame"></div>
-    <div class="diya-body"></div>
-  </div>
-
-  <div class="diya diya-right">
-    <div class="diya-flame"></div>
-    <div class="diya-body"></div>
-  </div>
-
-
-  <!-- =========================================
-       HEADER
-  ========================================== -->
-  <header class="main-header">
-
-    <div class="header-inner">
-
-      <div class="brand">
-
-        <div class="brand-icon">
-          🦚
-        </div>
-
-        <div class="brand-text">
-          <span class="brand-small">जय श्री कृष्ण</span>
-          <span class="brand-title">JANMASHTAMI</span>
-        </div>
-
-      </div>
-
-      <!-- Hidden management menu -->
-      <button
-        class="menu-button"
-        id="managementMenu"
-        aria-label="Management"
-      >
-        <i class="fa-solid fa-ellipsis-vertical"></i>
-      </button>
-
+        </main>
     </div>
 
-  </header>
-
-
-  <!-- =========================================
-       DESIGN CREDIT
-  ========================================== -->
-  <div class="design-credit">
-    web design by shlok chaudhary <span>❤️</span>
-  </div>
-
-
-  <!-- =========================================
-       MAIN CONTENT
-  ========================================== -->
-  <main class="main-content">
-
-
-    <!-- =======================================
-         HERO SECTION
-    ======================================== -->
-    <section class="hero-section">
-
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        DIVINE LIVE DARSHAN
-      </div>
-
-      <h1 class="hero-title">
-        <span>श्री कृष्ण</span>
-        <strong>जन्माष्टमी</strong>
-      </h1>
-
-      <p class="hero-description">
-        प्रेम, भक्ति और आस्था के इस पावन पर्व पर
-        भगवान श्री कृष्ण के दिव्य दर्शन का अनुभव करें।
-      </p>
-
-    </section>
-
-
-    <!-- =======================================
-         LIVE TV
-    ======================================== -->
-    <section class="live-section">
-
-      <div class="section-label">
-        <span class="label-line"></span>
-
-        <span>
-          <i class="fa-solid fa-crown"></i>
-          LIVE DARSHAN
-        </span>
-
-        <span class="label-line"></span>
-      </div>
-
-
-      <!-- TV FRAME -->
-      <div class="tv-wrapper">
-
-        <div class="tv-glow"></div>
-
-        <div class="tv-frame">
-
-          <!-- TV top decoration -->
-          <div class="tv-top-decoration">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-
-          <!-- Screen -->
-          <div class="tv-screen" id="tvScreen">
-
-            <!-- Before live -->
-            <div
-              class="pre-live-screen"
-              id="preLiveScreen"
-            >
-
-              <div class="screen-symbol">
-                🪷
-              </div>
-
-              <div class="screen-title">
-                दिव्य दर्शन
-              </div>
-
-              <div class="screen-status">
-                LIVE DARSHAN WILL BEGIN SOON
-              </div>
-
-              <!-- Countdown -->
-              <div
-                class="countdown"
-                id="countdown"
-              >
-
-                <div class="count-box">
-                  <span id="countDays">00</span>
-                  <small>DAYS</small>
-                </div>
-
-                <div class="count-colon">:</div>
-
-                <div class="count-box">
-                  <span id="countHours">00</span>
-                  <small>HOURS</small>
-                </div>
-
-                <div class="count-colon">:</div>
-
-                <div class="count-box">
-                  <span id="countMinutes">00</span>
-                  <small>MIN</small>
-                </div>
-
-                <div class="count-colon">:</div>
-
-                <div class="count-box">
-                  <span id="countSeconds">00</span>
-                  <small>SEC</small>
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <!-- YouTube Live -->
-            <div
-              class="youtube-container"
-              id="youtubeContainer"
-            >
-
-              <iframe
-                id="youtubePlayer"
-                src=""
-                title="Shri Krishna Janmashtami Live Darshan"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-                referrerpolicy="strict-origin-when-cross-origin"
-              ></iframe>
-
-            </div>
-
-
-            <!-- LIVE indicator -->
-            <div
-              class="live-indicator"
-              id="liveIndicator"
-            >
-              <span class="live-dot"></span>
-              LIVE
-            </div>
-
-          </div>
-
-
-          <!-- TV bottom -->
-          <div class="tv-bottom">
-
-            <div class="tv-control-light"></div>
-
-            <div class="tv-brand">
-              श्री कृष्ण
-            </div>
-
-            <div class="tv-control-light"></div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- =====================================
-           TV CONTROLS
-      ====================================== -->
-      <div class="tv-controls">
-
-        <button
-          class="control-btn"
-          id="soundButton"
-          aria-label="Sound"
-        >
-          <i class="fa-solid fa-volume-high"></i>
-        </button>
-
-        <button
-          class="control-btn fullscreen-btn"
-          id="fullscreenButton"
-          aria-label="Fullscreen"
-        >
-          <i class="fa-solid fa-expand"></i>
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================
-         DARSHAN TIME
-    ======================================== -->
-    <section class="darshan-info">
-
-      <div class="info-card">
-
-        <div class="info-icon">
-          <i class="fa-regular fa-clock"></i>
-        </div>
-
-        <div class="info-content">
-
-          <span class="info-label">
-            NEXT DARSHAN
-          </span>
-
-          <strong id="nextDarshanTime">
-            आज रात 12:00 बजे
-          </strong>
-
-        </div>
-
-      </div>
-
-
-      <div class="info-card">
-
-        <div class="info-icon">
-          <i class="fa-solid fa-heart"></i>
-        </div>
-
-        <div class="info-content">
-
-          <span class="info-label">
-            BLESSINGS
-          </span>
-
-          <strong>
-            राधे राधे 🙏
-          </strong>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================
-         DEVOTIONAL MESSAGE
-    ======================================== -->
-    <section class="devotional-section">
-
-      <div class="flute-decoration">
-        🪈
-      </div>
-
-      <div class="devotional-content">
-
-        <span class="quote-symbol">“</span>
-
-        <p>
-          जहाँ प्रेम है, वहाँ कृष्ण हैं।
-          जहाँ भक्ति है, वहाँ भगवान हैं।
-        </p>
-
-        <span class="quote-symbol quote-end">”</span>
-
-        <div class="devotional-divider">
-          ✦ 🪷 ✦
-        </div>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-  <!-- =========================================
-       WHATSAPP + EMAIL
-  ========================================== -->
-  <div class="contact-buttons">
-
-    <a
-      href="https://wa.me/917689874945"
-      class="contact-btn whatsapp-btn"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="WhatsApp"
-    >
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <a
-      href="mailto:jojoenterprises001@gmail.com"
-      class="contact-btn email-btn"
-      aria-label="Email"
-    >
-      <i class="fa-solid fa-envelope"></i>
-    </a>
-
-  </div>
-
-
-  <!-- =========================================
-       FOOTER
-  ========================================== -->
-  <footer class="main-footer">
-
-    <div class="footer-peacock">
-      🦚
-    </div>
-
-    <p>
-      जय श्री कृष्ण • शुभ जन्माष्टमी
-    </p>
-
-    <span>
-      प्रेम • भक्ति • आस्था
-    </span>
-
-  </footer>
-
-
-  <!-- =========================================
-       MANAGEMENT LOGIN MODAL
-       Hidden from normal customers
-  ========================================== -->
-  <div
-    class="management-modal"
-    id="managementModal"
-    aria-hidden="true"
-  >
-
-    <div class="modal-overlay" id="modalOverlay"></div>
-
-    <div class="management-box">
-
-      <button
-        class="modal-close"
-        id="closeManagement"
-        aria-label="Close"
-      >
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="management-icon">
-        <i class="fa-solid fa-shield-halved"></i>
-      </div>
-
-      <h2>Management Access</h2>
-
-      <p>
-        Authorized access only
-      </p>
-
-      <div class="management-actions">
-
-        <a
-          href="admin/"
-          class="admin-access-btn"
-        >
-          <i class="fa-solid fa-lock"></i>
-          Admin Panel
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- =========================================
-       MAIN JAVASCRIPT
-  ========================================== -->
-  <script src="js/app.js"></script>
-
+    <!-- External JavaScript Files -->
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
-  </html>
+</html>
+
