@@ -170,4 +170,58 @@
     .cell { font-size: 40px; }
     .game-modes { flex-direction: column; width: 100%; max-width: 250px; margin: 0 auto 24px auto;}
       }
+/* Memory Match Board Styles */
+.memory-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 8px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.memory-card.flipped, .memory-card.matched {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: #FFD700;
+}
+
+/* Choice Game Styles */
+.rps-scores {
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.rps-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.rps-btn {
+    padding: 10px 16px;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    font-size: 14px;
+}
+
+.rps-btn:hover {
+    background: rgba(255, 215, 0, 0.2);
+}
+
 
