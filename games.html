@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Play Games - Krishna Janmashtami</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css"> <!-- पुरानी डिज़ाइन के लिए -->
+    <link rel="stylesheet" href="css/games.css"> <!-- गेम्स की नई डिज़ाइन के लिए -->
+</head>
+<body class="theme-royal-krishna">
+
+    <div class="content-wrapper">
+        <!-- Header -->
+        <header class="games-header">
+            <a href="index.html" class="back-btn glass-panel">
+                <i class="fa-solid fa-arrow-left"></i> Back to Darshan
+            </a>
+            <h1 class="main-heading" style="font-size: 28px; margin-top: 16px;">Devotional Games</h1>
+            <p class="devotional-text">"Enjoy these fun games with a divine touch."</p>
+        </header>
+
+        <main class="games-container">
+            <!-- Game 1: Tic-Tac-Toe -->
+            <section class="game-card glass-panel">
+                <h2 class="game-title">Tic-Tac-Toe (Zero-Kanta)</h2>
+                
+                <!-- Game Mode Selection -->
+                <div class="game-modes">
+                    <button id="btn-vs-cpu" class="mode-btn active"><i class="fa-solid fa-robot"></i> 1 Player (vs Computer)</button>
+                    <button id="btn-vs-friend" class="mode-btn"><i class="fa-solid fa-user-friends"></i> 2 Players</button>
+                </div>
+
+                <!-- Game Status -->
+                <div id="game-status" class="game-status">Your Turn (🦚)</div>
+
+                <!-- Game Board -->
+                <div class="board" id="tic-tac-board">
+                    <div class="cell" data-index="0"></div>
+                    <div class="cell" data-index="1"></div>
+                    <div class="cell" data-index="2"></div>
+                    <div class="cell" data-index="3"></div>
+                    <div class="cell" data-index="4"></div>
+                    <div class="cell" data-index="5"></div>
+                    <div class="cell" data-index="6"></div>
+                    <div class="cell" data-index="7"></div>
+                    <div class="cell" data-index="8"></div>
+                </div>
+
+                <!-- Restart Button -->
+                <button id="restart-btn" class="contact-btn glass-panel restart-btn">
+                    <i class="fa-solid fa-rotate-right"></i> Restart Game
+                </button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Game Logic JS -->
+    <script src="js/games.js"></script>
+</body>
+</html>
+
