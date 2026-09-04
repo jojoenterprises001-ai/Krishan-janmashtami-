@@ -217,11 +217,13 @@ function animateCanvas() {
 }
 animateCanvas();
   
-// Function to Unmute YouTube Loop Video on Click
+
+// Function to Unmute YouTube Loop Video on Click (Updated & Fixed)
 function enableAudio() {
     const iframe = document.getElementById('offline-video-frame');
     if (iframe) {
-        iframe.src = "https://www.youtube.com/embed/h2EmLmifEMs?autoplay=1&mute=0&loop=1&playlist=h2EmLmifEMs&controls=0&showinfo=0&autohide=1";
+        // iframe ko reload karne ki bajaye mute=0 wala naya link direct set karein taaki turant aawaz aa jaye
+        iframe.src = "https://www.youtube.com/embed/h2EmLmifEMs?autoplay=1&mute=0&loop=1&playlist=h2EmLmifEMs&controls=1&showinfo=0&autohide=1";
     }
     const btn = document.getElementById('audio-toggle-btn');
     if (btn) {
