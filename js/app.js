@@ -35,11 +35,11 @@ function updateUI(data) {
         announcementBanner.classList.add('hidden');
     }
 
-    // Video Loop and Live Status Control
-    const offlineVideo = document.getElementById('offline-video');
-    
+        // Video Loop and Live Status Control
+    const offlineVideoFrame = document.getElementById('offline-video-frame');
+
     if (data.liveEnabled) {
-        if (offlineVideo) offlineVideo.style.display = 'none';
+        if (offlineVideoFrame) offlineVideoFrame.style.display = 'none';
         if (youtubePlayer) {
             youtubePlayer.style.display = 'block';
             const targetSrc = `https://www.youtube.com/embed/${data.youtubeVideoId || 'Qt8zL525RZQ'}?autoplay=1&mute=1&rel=0&modestbranding=1`;
@@ -52,11 +52,11 @@ function updateUI(data) {
             youtubePlayer.src = "";
             youtubePlayer.style.display = 'none';
         }
-        if (offlineVideo) {
-            offlineVideo.style.display = 'block';
-            offlineVideo.play().catch(e => console.log("Video autoplay blocked:", e));
+        if (offlineVideoFrame) {
+            offlineVideoFrame.style.display = 'block';
         }
     }
+    
 
     // Live Status Badge & Countdown Display Logic
     if (data.liveEnabled) {
