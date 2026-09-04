@@ -43,14 +43,16 @@
             <div id="announcement-banner" class="glass-panel hidden">
                 <p id="announcement-text"></p>
             </div>
-            <!-- Live Status Badge -->
-                           <!-- Live Status Badge Fixed Position -->
-            <div style="position: relative; z-index: 5; text-align: center; margin-top: 15px; margin-bottom: 5px;">
-                <div id="live-status-badge" class="status-badge scheduled-state" style="display: inline-block; position: static !important;">
-                    <span id="status-indicator" class="indicator-dot"></span>
-                    <span id="status-text">Live Darshan Starting Soon</span>
-                </div>
+                        <!-- Clickable Premium Live Status Badge -->
+            <div class="badge-container" style="margin-top: 15px; margin-bottom: 5px; text-align: center;">
+                <a href="#darshan-videos" style="text-decoration: none; display: inline-block;">
+                    <div id="live-status-badge" style="display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: 2px solid #ffd700; background: linear-gradient(45deg, #0f0c29, #302b63, #24243e); box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); padding: 10px 25px; border-radius: 30px;">
+                        <span id="status-indicator" style="width: 12px; height: 12px; background-color: #ff2a2a; border-radius: 50%; box-shadow: 0 0 10px #ff2a2a; animation: pulse 1.5s infinite;"></span>
+                        <span id="status-text" style="color: #ffd700; font-weight: 800; font-family: 'Merriweather', serif; font-size: 15px; letter-spacing: 1px;">✨ CLICK FOR LIVE DARSHAN ✨</span>
+                    </div>
+                </a>
             </div>
+            
 
             <!-- Red Alert Notice with Both Icons (Skip & Volume) -->
             <div style="position: relative; z-index: 5; text-align: center; margin: 8px 0;">
@@ -100,6 +102,68 @@
                         <span class="time-label" style="font-size: 12px; color: #ddd;">Secs</span>
                     </div>
                 </div>
+                            <!-- Locked YouTube Videos Section -->
+            <section id="darshan-videos" style="margin: 40px 0; text-align: center; scroll-margin-top: 20px;">
+                <h3 style="color: #ffd700; margin-bottom: 10px; font-family: 'Merriweather', serif; font-size: 22px;">Special Janmashtami Darshan</h3>
+                <p style="color: #ddd; font-size: 14px; margin-bottom: 25px;">Videos will unlock automatically at their scheduled time!</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 25px; align-items: center; padding: 0 15px;">
+                    
+                    <!-- Video 3 (Unlocks at 9:00 PM - Today, 4th Sept) -->
+                    <div class="locked-video" data-videoid="A_1kmRl4JaM" data-unlocktime="2026-09-04T21:00:00" style="position: relative; width: 100%; max-width: 400px; border-radius: 12px; overflow: hidden; border: 2px solid #ffd700; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);">
+                        <img src="https://img.youtube.com/vi/A_1kmRl4JaM/hqdefault.jpg" alt="Darshan Video 9 PM" style="width: 100%; display: block;">
+                        <div class="lock-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; cursor: pointer;">
+                            <i class="fa-solid fa-lock" style="font-size: 35px; color: #ffd700; margin-bottom: 10px;"></i>
+                            <span style="font-weight: bold; font-size: 16px; color: #fff;">Unlocks Today at 9:00 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Video 1 (Unlocks at 12:01 AM - 5th Sept) -->
+                    <div class="locked-video" data-videoid="W3VkEeaJsqw" data-unlocktime="2026-09-05T00:01:00" style="position: relative; width: 100%; max-width: 400px; border-radius: 12px; overflow: hidden; border: 2px solid #ffd700; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);">
+                        <img src="https://img.youtube.com/vi/W3VkEeaJsqw/hqdefault.jpg" alt="Midnight Darshan 1" style="width: 100%; display: block;">
+                        <div class="lock-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; cursor: pointer;">
+                            <i class="fa-solid fa-lock" style="font-size: 35px; color: #ffd700; margin-bottom: 10px;"></i>
+                            <span style="font-weight: bold; font-size: 16px; color: #fff;">Unlocks at 12:01 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 (Unlocks at 12:01 AM - 5th Sept) -->
+                    <div class="locked-video" data-videoid="hKCioQS_hLo" data-unlocktime="2026-09-05T00:01:00" style="position: relative; width: 100%; max-width: 400px; border-radius: 12px; overflow: hidden; border: 2px solid #ffd700; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);">
+                        <img src="https://img.youtube.com/vi/hKCioQS_hLo/hqdefault.jpg" alt="Midnight Darshan 2" style="width: 100%; display: block;">
+                        <div class="lock-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; cursor: pointer;">
+                            <i class="fa-solid fa-lock" style="font-size: 35px; color: #ffd700; margin-bottom: 10px;"></i>
+                            <span style="font-weight: bold; font-size: 16px; color: #fff;">Unlocks at 12:01 AM</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Unlock Logic Script -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const lockedVideos = document.querySelectorAll('.locked-video');
+                    
+                    lockedVideos.forEach(video => {
+                        video.addEventListener('click', function() {
+                            const now = new Date().getTime();
+                            const unlockTimeStr = this.getAttribute('data-unlocktime');
+                            const unlockTime = new Date(unlockTimeStr).getTime();
+                            
+                            if (now >= unlockTime) {
+                                // Taala kholo aur video chalao!
+                                const videoId = this.getAttribute('data-videoid');
+                                this.innerHTML = `<iframe width="100%" height="225" src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>`;
+                            } else {
+                                // Alert dikhao
+                                let timeMsg = unlockTimeStr.includes("21:00") ? "aaj raat 9:00 PM" : "raat 12:01 AM";
+                                alert("🙏 Jai Shri Krishna! 🙏\nYe video " + timeMsg + " baje khulega. Kripya pratiksha karein.");
+                            }
+                        });
+                    });
+                });
+    </script>
+    
             </section>
             
 
