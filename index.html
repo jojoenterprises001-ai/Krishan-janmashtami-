@@ -55,21 +55,24 @@
                     </div>
                 </div>
 
-              <div class="tv-box glowing-border" id="tv-box-container" style="position: relative; overflow: hidden;">
-                <!-- Local Video Loop with Muted for Autoplay -->
-                <video id="offline-video" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                    <source src="video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                          <!-- TV Box Player with YouTube Loop (Jab tak live nahi hoga) -->
+            <div class="tv-box glowing-border" id="tv-box-container" style="position: relative; overflow: hidden;">
+                <iframe id="offline-video-frame" 
+                        src="https://www.youtube.com/embed/h2EmLmifEMs?autoplay=1&mute=1&loop=1&playlist=h2EmLmifEMs&controls=0&showinfo=0&autohide=1" 
+                        title="Krishna Janmashtami Loop Video" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        style="width: 100%; height: 100%; border: none; display: block; position: absolute; top: 0; left: 0;">
+                </iframe>
 
-                <!-- YouTube Live Iframe -->
+                <!-- YouTube Live Iframe (Jab Admin se Live ON hoga) -->
                 <iframe id="youtube-player" 
                         src="" 
                         title="Krishna Janmashtami Live Darshan" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen style="width: 100%; height: 100%; border: none; display: none; position: absolute; top: 0; left: 0; z-index: 2;">
                 </iframe>
-              </div>
+            </div>
+                
                 
 
             <!-- Dynamic Countdown Timer -->
