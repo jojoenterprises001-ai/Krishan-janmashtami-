@@ -35,15 +35,30 @@ function updateUI(data) {
         announcementBanner.classList.add('hidden');
     }
 
-    // YouTube Video ID Update
-    if (data.youtubeVideoId) {
-        const targetSrc = `https://www.youtube.com/embed/${data.youtubeVideoId}?autoplay=1&mute=1&rel=0&modestbranding=1`;
-        if (youtubePlayer.src !== targetSrc) {
-            youtubePlayer.src = targetSrc;
+    // Video Loop and Live Status Control
+    const offlineVideo = document.getElementById('offline-video');
+    
+    if (data.liveEnabled) {
+        if (offlineVideo) offlineVideo.style.display = 'none';
+        if (youtubePlayer) {
+            youtubePlayer.style.display = 'block';
+            const targetSrc = `https://www.youtube.com/embed/${data.youtubeVideoId || 'Qt8zL525RZQ'}?autoplay=1&mute=1&rel=0&modestbranding=1`;
+            if (youtubePlayer.src !== targetSrc) {
+                youtubePlayer.src = targetSrc;
+            }
+        }
+    } else {
+        if (youtubePlayer) {
+            youtubePlayer.src = "";
+            youtubePlayer.style.display = 'none';
+        }
+        if (offlineVideo) {
+            offlineVideo.style.display = 'block';
+            offlineVideo.play().catch(e => console.log("Video autoplay blocked:", e));
         }
     }
 
-    // Live Status Update
+    // Live Status Badge & Countdown Display Logic
     if (data.liveEnabled) {
         statusBadge.classList.remove('scheduled-state');
         statusBadge.classList.add('live-state');
@@ -54,6 +69,8 @@ function updateUI(data) {
         statusBadge.classList.remove('live-state');
         statusBadge.classList.add('scheduled-state');
         statusText.innerText = 'Live Darshan Starting Soon';
+    }
+    
         
         // Countdown Logic
         if (data.countdownEnabled && data.darshanDate && data.darshanTime) {
