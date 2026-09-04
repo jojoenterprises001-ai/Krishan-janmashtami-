@@ -43,15 +43,7 @@
             <div id="announcement-banner" class="glass-panel hidden">
                 <p id="announcement-text"></p>
             </div>
-                 <!-- Clickable Premium Live Status Badge (Centered Fix) -->
-            <div class="badge-container" style="margin-top: 15px; margin-bottom: 15px; text-align: center; width: 100%;">
-                <a href="#darshan-videos" style="text-decoration: none; display: inline-block; width: 90%; max-width: 320px;">
-                    <div id="live-status-badge" style="display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: 2px solid #ffd700; background: linear-gradient(45deg, #0f0c29, #302b63, #24243e); box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); padding: 10px 15px; border-radius: 30px; width: 100%; box-sizing: border-box;">
-                        <span id="status-indicator" style="width: 12px; height: 12px; background-color: #ff2a2a; border-radius: 50%; box-shadow: 0 0 10px #ff2a2a; animation: pulse 1.5s infinite; flex-shrink: 0;"></span>
-                        <span id="status-text" style="color: #ffd700; font-weight: 800; font-family: 'Merriweather', serif; font-size: 14px; letter-spacing: 0.5px; white-space: nowrap;">✨ CLICK FOR LIVE DARSHAN ✨</span>
-                    </div>
-                </a>
-            </div>
+                 
             
             </div>
             
@@ -82,28 +74,51 @@
             </div>
             
                 
+            <!-- Special Photo Gallery Section (Replaced Countdown Timer) -->
+            <section id="photo-gallery" style="margin: 30px 0; text-align: center; padding: 0 15px;">
+                <h3 style="color: #ffd700; margin-bottom: 8px; font-family: 'Merriweather', serif; font-size: 22px;">✨ Little Kanha Gallery ✨</h3>
+                <p style="color: #ddd; font-size: 14px; margin-bottom: 20px;">Tap on any photo to view full screen!</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 500px; margin: 0 auto;">
+                    
+                    <!-- Photo 1 -->
+                    <div style="border-radius: 12px; overflow: hidden; border: 2px solid #ffd700; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); background: #000;">
+                        <a href="IMG-20260904-WA0011.jpg" target="_blank">
+                            <img src="IMG-20260904-WA0011.jpg" alt="Kanha Photo 1" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+                        </a>
+                    </div>
 
-                 <!-- Dynamic Countdown Timer -->
-            <section id="countdown-section" class="countdown-section" style="margin: 15px 0;">
-                <h3 class="countdown-title" style="text-align: center; color: #ffd700; margin-bottom: 10px;">Darshan begins in</h3>
-                <div class="countdown-grid" style="display: flex; justify-content: center; gap: 10px;">
-                    <div class="time-box glass-panel" style="padding: 10px; text-align: center;">
-                        <span id="cd-days" class="time-number" style="display: block; font-size: 20px; font-weight: bold; color: #fff;">00</span>
-                        <span class="time-label" style="font-size: 12px; color: #ddd;">Days</span>
+                    <!-- Photo 2 -->
+                    <div style="border-radius: 12px; overflow: hidden; border: 2px solid #ffd700; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); background: #000;">
+                        <a href="IMG-20260904-WA0025.jpg" target="_blank">
+                            <img src="IMG-20260904-WA0025.jpg" alt="Kanha Photo 2" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+                        </a>
                     </div>
-                    <div class="time-box glass-panel" style="padding: 10px; text-align: center;">
-                        <span id="cd-hours" class="time-number" style="display: block; font-size: 20px; font-weight: bold; color: #fff;">00</span>
-                        <span class="time-label" style="font-size: 12px; color: #ddd;">Hours</span>
+
+                    <!-- Photo 3 -->
+                    <div style="border-radius: 12px; overflow: hidden; border: 2px solid #ffd700; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); background: #000;">
+                        <a href="IMG-20260904-WA0012.jpg" target="_blank">
+                            <img src="IMG-20260904-WA0012.jpg" alt="Kanha Photo 3" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+                        </a>
                     </div>
-                    <div class="time-box glass-panel" style="padding: 10px; text-align: center;">
-                        <span id="cd-minutes" class="time-number" style="display: block; font-size: 20px; font-weight: bold; color: #fff;">00</span>
-                        <span class="time-label" style="font-size: 12px; color: #ddd;">Mins</span>
+
+                    <!-- Photo 4 -->
+                    <div style="border-radius: 12px; overflow: hidden; border: 2px solid #ffd700; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); background: #000;">
+                        <a href="IMG-20260904-WA0005.jpg" target="_blank">
+                            <img src="IMG-20260904-WA0005.jpg" alt="Kanha Photo 4" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+                        </a>
                     </div>
-                    <div class="time-box glass-panel" style="padding: 10px; text-align: center;">
-                        <span id="cd-seconds" class="time-number" style="display: block; font-size: 20px; font-weight: bold; color: #fff;">00</span>
-                        <span class="time-label" style="font-size: 12px; color: #ddd;">Secs</span>
-                    </div>
+
                 </div>
+
+                <!-- Extra Photo (Centered Below) -->
+                <div style="margin-top: 15px; max-width: 240px; margin-left: auto; margin-right: auto; border-radius: 12px; overflow: hidden; border: 2px solid #ffd700; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); background: #000;">
+                    <a href="IMG-20260904-WA0002.jpg" target="_blank">
+                        <img src="IMG-20260904-WA0002.jpg" alt="Kanha Photo 5" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+                    </a>
+                </div>
+            </section>
+    
                                        <!-- Locked YouTube Videos Section -->
             <section id="darshan-videos" style="margin: 40px 0; text-align: center; scroll-margin-top: 20px;">
                 <h3 style="color: #ffd700; margin-bottom: 10px; font-family: 'Merriweather', serif; font-size: 22px;">Special Janmashtami Darshan</h3>
